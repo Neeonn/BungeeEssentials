@@ -12,14 +12,6 @@ System:
     &6 /&eannounce &2<&aannouncement&2> &7- &fAnnouncement;
     &6 /&eping &3[&bplayer&3] &7- &fPing.
     &r
-  Info:
-    Message: |-
-      &r
-      &f Username: %username%
-      &f UUID: %uuid%
-      &f IP Address: %ip%
-      &f Server: %server%
-      &r
   Reload: "&aPlugin reloaded!"
   NoPerms: "&cNo permissions!"
   UnknownCommand: "&cUnknown command."
@@ -38,3 +30,11 @@ Announcement:
 Ping:
   Self: "&fYour ping is: %color%%ping%ms&f."
   Other: "&fPing of &b%player% &fis %color%%ping%ms&f."
+Info:
+  Message: |-
+    &r
+    &f Username: %username%
+    &f UUID: %uuid%
+    &f IP Address: %ip%
+    &f Server: %server%
+    &r

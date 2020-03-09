@@ -29,14 +29,14 @@ public class Messages {
         final Configuration messages = configUtil.getConfig("messages.yml");
 
         if (messages != null) {
-            prefix = getString("Prefix");
-            reload = getString("Reload");
-            noPerms = getString("NoPerms");
-            unknownCommand = getString("UnknownCommand");
-            playerNotFound = getString("PlayerOffline");
-            help = getString("Help");
+            prefix = getString("System.Prefix");
+            reload = getString("System.Reload");
+            noPerms = getString("System.NoPerms");
+            unknownCommand = getString("System.UnknownCommand");
+            playerNotFound = getString("System.PlayerOffline");
+            disabled = getString("System.Disabled");
+            help = getString("System.Help");
             info = getString("Info.Message");
-            disabled = getString("Disabled");
             emptyMessage = getString("Announcement.EmptyMessage");
             chatMessage = getString("Announcement.ChatMessage");
             title = getString("Announcement.Title");
