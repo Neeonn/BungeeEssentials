@@ -1,0 +1,16 @@
+#
+# BungeeEssentials
+# created by Neon
+#
+Custom_Protocol:
+  Enabled: true
+  String: "&f1.8 - 1.15.2"
+Announcement:
+  Enabled: true
+  Duration: 300
+CustomList:
+  Enabled: true
+Info:
+  Enabled: true
+Ping:
+  Enabled: true
