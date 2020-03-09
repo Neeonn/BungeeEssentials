@@ -31,11 +31,15 @@ public class AnnouncementCommand extends Command {
 
             if (config.getBoolean("Announcement.Enabled")) {
                 if (args.length < 1 || args[0].equalsIgnoreCase("help")) {
-                    if (!config.getBoolean("MessagingSystem.ActionBar"))
+                    if (!config.getBoolean("MessagingSystem.Chat"))
                         proxiedPlayer.sendMessage(new TextComponent(messages.getPrefix() + messages.getEmptyMessage()));
                     else proxiedPlayer.sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(messages.getEmptyMessage()));
                 } else sendAnnouncement(args, plugin);
-            } else proxiedPlayer.sendMessage(new TextComponent(messages.getDisabled()));
+            } else {
+                if (!config.getBoolean("MessagingSystem.Chat"))
+                    proxiedPlayer.sendMessage(new TextComponent(messages.getPrefix() + messages.getDisabled()));
+                else proxiedPlayer.sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(messages.getDisabled()));
+            }
         } else {
             if (config.getBoolean("Announcement.Enabled")) {
                 if (args.length < 1 || args[0].equalsIgnoreCase("help")) {

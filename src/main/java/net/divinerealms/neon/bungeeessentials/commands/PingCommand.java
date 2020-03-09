@@ -34,33 +34,33 @@ public class PingCommand extends Command {
                 if (args.length == 0) {
                     if (proxiedPlayer.hasPermission("bess.ping")) {
                         noPerm = messages.getNoPerms();
-                        if (!config.getBoolean("MessagingSystem.ActionBar"))
+                        if (!config.getBoolean("MessagingSystem.Chat"))
                             proxiedPlayer.sendMessage(new TextComponent(messages.getPrefix() + noPerm));
                         else proxiedPlayer.sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(noPerm));
                         return;
                     }
 
                     if (proxiedPlayer.getPing() < 60) {
-                        if (!config.getBoolean("MessagingSystem.ActionBar"))
+                        if (!config.getBoolean("MessagingSystem.Chat"))
                             proxiedPlayer.sendMessage(new TextComponent(messages.getPrefix() + messages.getPingSelf().replace("%ping%", "" + proxiedPlayer.getPing()).replace("%color%", ChatColor.GREEN + "")));
                         else proxiedPlayer.sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(messages.getPingSelf().replace("%ping%", "" + proxiedPlayer.getPing()).replace("%color%", ChatColor.GREEN + "")));
                     } else if (proxiedPlayer.getPing() < 120) {
-                        if (!config.getBoolean("MessagingSystem.ActionBar"))
+                        if (!config.getBoolean("MessagingSystem.Chat"))
                             proxiedPlayer.sendMessage(new TextComponent(messages.getPrefix() + messages.getPingSelf().replace("%ping%", "" + proxiedPlayer.getPing()).replace("%color%", ChatColor.YELLOW + "")));
                         else proxiedPlayer.sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(messages.getPingSelf().replace("%ping%", "" + proxiedPlayer.getPing()).replace("%color%", ChatColor.YELLOW + "")));
                     } else if (proxiedPlayer.getPing() < 300) {
-                        if (!config.getBoolean("MessagingSystem.ActionBar"))
+                        if (!config.getBoolean("MessagingSystem.Chat"))
                             proxiedPlayer.sendMessage(new TextComponent(messages.getPrefix() + messages.getPingSelf().replace("%ping%", "" + proxiedPlayer.getPing()).replace("%color%", ChatColor.RED + "")));
                         else proxiedPlayer.sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(messages.getPingSelf().replace("%ping%", "" + proxiedPlayer.getPing()).replace("%color%", ChatColor.RED + "")));
                     } else if (proxiedPlayer.getPing() > 300) {
-                        if (!config.getBoolean("MessagingSystem.ActionBar"))
+                        if (!config.getBoolean("MessagingSystem.Chat"))
                             proxiedPlayer.sendMessage(new TextComponent(messages.getPrefix() + messages.getPingSelf().replace("%ping%", "" + proxiedPlayer.getPing()).replace("%color%", ChatColor.DARK_RED + "")));
                         else proxiedPlayer.sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(messages.getPingSelf().replace("%ping%", "" + proxiedPlayer.getPing()).replace("%color%", ChatColor.DARK_RED + "")));
                     }
                 } else {
                     if (proxiedPlayer.hasPermission("bcc.ping.others")) {
                         noPerm = messages.getPrefix() + messages.getNoPerms();
-                        if (!config.getBoolean("MessagingSystem.ActionBar"))
+                        if (!config.getBoolean("MessagingSystem.Chat"))
                             proxiedPlayer.sendMessage(new TextComponent(noPerm));
                         else proxiedPlayer.sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(messages.getNoPerms()));
                         return;
@@ -72,30 +72,30 @@ public class PingCommand extends Command {
 
                     if (plugin.getProxy().getPlayers().contains(targetPlayer)) {
                         if (targetPlayer.getPing() < 60) {
-                            if (!config.getBoolean("MessagingSystem.ActionBar"))
+                            if (!config.getBoolean("MessagingSystem.Chat"))
                                 proxiedPlayer.sendMessage(new TextComponent(messages.getPrefix() + messages.getPingOthers().replace("%ping%", "" + targetPlayer.getPing()).replace("%player%", targetPlayer.getName()).replace("%color%", ChatColor.GREEN + "")));
                             else proxiedPlayer.sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(messages.getPingOthers().replace("%ping%", "" + targetPlayer.getPing()).replace("%player%", targetPlayer.getName()).replace("%color%", ChatColor.GREEN + "")));
                         } else if (targetPlayer.getPing() < 120) {
-                            if (!config.getBoolean("MessagingSystem.ActionBar"))
+                            if (!config.getBoolean("MessagingSystem.Chat"))
                                 proxiedPlayer.sendMessage(new TextComponent(messages.getPrefix() + messages.getPingOthers().replace("%ping%", "" + targetPlayer.getPing()).replace("%player%", targetPlayer.getName()).replace("%color%", ChatColor.YELLOW + "")));
                             else proxiedPlayer.sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(messages.getPingOthers().replace("%ping%", "" + targetPlayer.getPing()).replace("%player%", targetPlayer.getName()).replace("%color%", ChatColor.YELLOW + "")));
                         } else if (targetPlayer.getPing() < 300) {
-                            if (!config.getBoolean("MessagingSystem.ActionBar"))
+                            if (!config.getBoolean("MessagingSystem.Chat"))
                                 proxiedPlayer.sendMessage(new TextComponent(messages.getPrefix() + messages.getPingOthers().replace("%ping%", "" + targetPlayer.getPing()).replace("%player%", targetPlayer.getName()).replace("%color%", ChatColor.RED + "")));
                             else proxiedPlayer.sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(messages.getPingOthers().replace("%ping%", "" + targetPlayer.getPing()).replace("%player%", targetPlayer.getName()).replace("%color%", ChatColor.RED + "")));
                         } else if (targetPlayer.getPing() > 300) {
-                            if (!config.getBoolean("MessagingSystem.ActionBar"))
+                            if (!config.getBoolean("MessagingSystem.Chat"))
                                 proxiedPlayer.sendMessage(new TextComponent(messages.getPingOthers().replace("%ping%", "" + targetPlayer.getPing()).replace("%player%", targetPlayer.getName()).replace("%color%", ChatColor.DARK_RED + "")));
                             else proxiedPlayer.sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(messages.getPingOthers().replace("%ping%", "" + targetPlayer.getPing()).replace("%player%", targetPlayer.getName()).replace("%color%", ChatColor.DARK_RED + "")));
                         }
                     } else {
-                        if (!config.getBoolean("MessagingSystem.ActionBar"))
+                        if (!config.getBoolean("MessagingSystem.Chat"))
                             proxiedPlayer.sendMessage(new TextComponent(messages.getPrefix() + messages.getPlayerNotFound()));
                         else proxiedPlayer.sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(messages.getPlayerNotFound()));
                     }
                 }
             } else {
-                if (!config.getBoolean("MessagingSystem.ActionBar"))
+                if (!config.getBoolean("MessagingSystem.Chat"))
                     proxiedPlayer.sendMessage(new TextComponent(messages.getPrefix() + messages.getDisabled()));
                 else proxiedPlayer.sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(messages.getDisabled()));
             }

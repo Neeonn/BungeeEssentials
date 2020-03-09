@@ -36,13 +36,13 @@ public class BungeeEssentialsCommand extends Command {
                             .replace("%version%", plugin.getDescription().getVersion())));
                 } else if (args[0].equalsIgnoreCase("reload")) {
                     plugin.reload();
-                    if (!config.getBoolean("MessagingSystem.ActionBar"))
+                    if (!config.getBoolean("MessagingSystem.Chat"))
                         proxiedPlayer.sendMessage(new TextComponent(messages.getPrefix() + messages.getReload()));
                     else proxiedPlayer.sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(messages.getReload()));
                 } else if (args[0].equalsIgnoreCase("info")) {
                     if (config.getBoolean("Info.Enabled")) {
                         if (args.length < 2) {
-                            if (!config.getBoolean("MessagingSystem.ActionBar"))
+                            if (!config.getBoolean("MessagingSystem.Chat"))
                                 proxiedPlayer.sendMessage(new TextComponent(messages.getPrefix() + messages.getUnknownCommand()));
                             else proxiedPlayer.sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(messages.getUnknownCommand()));
                         } else {
@@ -54,23 +54,23 @@ public class BungeeEssentialsCommand extends Command {
                                         .replace("%ip%", target.getAddress().getHostName())
                                         .replace("%server%", target.getServer().getInfo().getName())));
                             } else {
-                                if (!config.getBoolean("MessagingSystem.ActionBar"))
+                                if (!config.getBoolean("MessagingSystem.Chat"))
                                     proxiedPlayer.sendMessage(new TextComponent(messages.getPrefix() + messages.getPlayerNotFound()));
                                 else proxiedPlayer.sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(messages.getPlayerNotFound()));
                             }
                         }
                     } else {
-                        if (!config.getBoolean("MessagingSystem.ActionBar"))
+                        if (!config.getBoolean("MessagingSystem.Chat"))
                             proxiedPlayer.sendMessage(new TextComponent(messages.getPrefix() + messages.getDisabled()));
                         else proxiedPlayer.sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(messages.getDisabled()));
                     }
                 } else {
-                    if (!config.getBoolean("MessagingSystem.ActionBar"))
+                    if (!config.getBoolean("MessagingSystem.Chat"))
                         proxiedPlayer.sendMessage(new TextComponent(messages.getPrefix() + messages.getUnknownCommand()));
                     else proxiedPlayer.sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(messages.getUnknownCommand()));
                 }
             } else {
-                if (!config.getBoolean("MessagingSystem.ActionBar"))
+                if (!config.getBoolean("MessagingSystem.Chat"))
                     proxiedPlayer.sendMessage(new TextComponent(messages.getPrefix() + messages.getNoPerms()));
                 else proxiedPlayer.sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(messages.getNoPerms()));
             }
