@@ -51,19 +51,19 @@ public class Messages {
     }
 
     public String getReload() {
-        return prefix + reload;
+        return reload;
     }
 
     public String getNoPerms() {
-        return prefix + noPerms;
+        return noPerms;
     }
 
     public String getUnknownCommand() {
-        return prefix + unknownCommand;
+        return unknownCommand;
     }
 
     public String getPlayerNotFound() {
-        return prefix + playerNotFound;
+        return playerNotFound;
     }
 
     public String getHelp() {
@@ -75,11 +75,11 @@ public class Messages {
     }
 
     public String getDisabled() {
-        return prefix + disabled;
+        return disabled;
     }
 
     public String getEmptyMessage() {
-        return prefix + emptyMessage;
+        return emptyMessage;
     }
 
     public String getChatMessage() {
@@ -95,11 +95,11 @@ public class Messages {
     }
 
     public String getPingSelf() {
-        return prefix + pingSelf;
+        return pingSelf;
     }
 
     public String getPingOthers() {
-        return prefix + pingOthers;
+        return pingOthers;
     }
 
     public String getString(String path) {
