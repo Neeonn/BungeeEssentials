@@ -1,29 +1,30 @@
-Prefix: "&3[&bB&6ESS&3] "
-Reload: "&aPlugin reloaded!"
-NoPerms: "&cNo permissions!"
-UnknownCommand: "&cUnknown command."
-PlayerOffline: "&cPlayer not found."
-Disabled: "&cModule disabled."
-Help: |-
-  &r
-  &b &lBungee&6&lEssentials &ev%version%
-  &7 created by &b%author%&7.
-  &r
-  &6 /&ebess help &7- &fHelp page (this);
-  &6 /&ebess info &2<&aplayer&2> &7- &fOnline player info;
-  &r
-  &6 /&emaintenance &2<&astart&2/&aend&2> &7- &fMaintenance mode;
-  &6 /&eannounce &2<&aannouncement&2> &7- &fAnnouncement;
-  &6 /&eping &3[&bplayer&3] &7- &fPing.
-  &r
-Info:
-  Message: |-
+System:
+  Prefix: "&3[&bB&6ESS&3] "
+  Help: |-
     &r
-    &f Username: %username%
-    &f UUID: %uuid%
-    &f IP Address: %ip%
-    &f Server: %server%
+    &b &lBungee&6&lEssentials &ev%version%
+    &7 created by &b%author%&7.
     &r
+    &6 /&ebess help &7- &fHelp page (this);
+    &6 /&ebess info &2<&aplayer&2> &7- &fOnline player info;
+    &r
+    &6 /&emaintenance &2<&astart&2/&aend&2> &7- &fMaintenance mode;
+    &6 /&eannounce &2<&aannouncement&2> &7- &fAnnouncement;
+    &6 /&eping &3[&bplayer&3] &7- &fPing.
+    &r
+  Info:
+    Message: |-
+      &r
+      &f Username: %username%
+      &f UUID: %uuid%
+      &f IP Address: %ip%
+      &f Server: %server%
+      &r
+  Reload: "&aPlugin reloaded!"
+  NoPerms: "&cNo permissions!"
+  UnknownCommand: "&cUnknown command."
+  PlayerOffline: "&cPlayer not found."
+  Disabled: "&cModule disabled."
 Announcement:
   EmptyMessage: "&cYou have to put in a message!"
   ChatMessage: |-

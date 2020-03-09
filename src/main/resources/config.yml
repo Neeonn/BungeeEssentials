@@ -14,3 +14,7 @@ Info:
   Enabled: true
 Ping:
   Enabled: true
+MessagingSystem:
+  # False means messages will be sent in ActionBar.
+  # True means messages will be sent in Chat.
+  Chat: false

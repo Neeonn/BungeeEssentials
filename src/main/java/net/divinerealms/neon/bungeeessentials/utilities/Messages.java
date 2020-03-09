@@ -46,6 +46,10 @@ public class Messages {
         }
     }
 
+    public String getPrefix() {
+        return prefix;
+    }
+
     public String getReload() {
         return prefix + reload;
     }

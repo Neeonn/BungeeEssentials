@@ -3,6 +3,7 @@ package net.divinerealms.neon.bungeeessentials.commands;
 import net.divinerealms.neon.bungeeessentials.BungeeEssentials;
 import net.divinerealms.neon.bungeeessentials.utilities.Config;
 import net.divinerealms.neon.bungeeessentials.utilities.Messages;
+import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.Title;
 import net.md_5.bungee.api.chat.TextComponent;
@@ -26,17 +27,21 @@ public class AnnouncementCommand extends Command {
         Configuration config = configUtil.getConfig("config.yml");
 
         if (sender instanceof ProxiedPlayer) {
+            ProxiedPlayer proxiedPlayer = (ProxiedPlayer) sender;
+
             if (config.getBoolean("Announcement.Enabled")) {
                 if (args.length < 1 || args[0].equalsIgnoreCase("help")) {
-                    sender.sendMessage(new TextComponent(messages.getEmptyMessage()));
+                    if (!config.getBoolean("MessagingSystem.ActionBar"))
+                        proxiedPlayer.sendMessage(new TextComponent(messages.getPrefix() + messages.getEmptyMessage()));
+                    else proxiedPlayer.sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(messages.getEmptyMessage()));
                 } else sendAnnouncement(args, plugin);
-            } else sender.sendMessage(new TextComponent(messages.getDisabled()));
+            } else proxiedPlayer.sendMessage(new TextComponent(messages.getDisabled()));
         } else {
             if (config.getBoolean("Announcement.Enabled")) {
                 if (args.length < 1 || args[0].equalsIgnoreCase("help")) {
-                    System.out.println(messages.getEmptyMessage());
+                    System.out.println(messages.getPrefix() + messages.getEmptyMessage());
                 } else sendAnnouncement(args, plugin);
-            } else System.out.println(messages.getDisabled());
+            } else System.out.println(messages.getPrefix() + messages.getDisabled());
         }
     }
 
